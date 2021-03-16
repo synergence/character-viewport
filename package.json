@@ -10,6 +10,10 @@
 	"author": "",
 	"license": "Unlicense",
 	"types": "out/index.d.ts",
+	"bugs": {
+		"url": "https://github.com/synergence/rbxts-character-viewport/issues"
+	},
+	"homepage": "https://github.com/synergence/rbxts-character-viewport#readme",
 	"files": [
 		"out/",
 		"LICENSE"
