@@ -1,5 +1,9 @@
 # @rbxts/character-viewport
 
+A live-updating character viewport, which shows animations.
+
+![Example](example.png)
+
 To use:
 ```tsx
 import { CharacterViewport } from '@rbxts/character-viewport';
