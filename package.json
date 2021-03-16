@@ -11,7 +11,8 @@
 	"license": "Unlicense",
 	"types": "out/index.d.ts",
 	"files": [
-		"out"
+		"out/",
+		"LICENSE"
 	],
 	"publishConfig": {
 		"access": "public"
