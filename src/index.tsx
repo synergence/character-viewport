@@ -11,17 +11,17 @@ interface CharacterViewportProps {
  * A dynamic viewport for displaying a Player's character
  */
 export class CharacterViewport extends Roact.Component<CharacterViewportProps> {
-	public static readonly CLONEABLE_CLASSES: Record<string, true> = [
+	public static readonly CLONEABLE_CLASSES: ReadonlySet<string> = [
 		'MeshPart',
 		'Part',
 		'Accoutrement',
 		'Pants',
 		'Shirt',
 		'Humanoid'
-	].reduce((currentValue, nextValue) => ({
-		...currentValue,
-		[nextValue]: true
-	}), {}); // get that nice O(1) index time
+	].reduce((currentValue, nextValue) => {
+		currentValue.add(nextValue);
+		return currentValue;
+	}, new Set<string>()); // get that nice O(1) index time
 
 	private static viewportInstances = new Map<CharacterViewport, true>();
 
@@ -116,7 +116,7 @@ export class CharacterViewport extends Roact.Component<CharacterViewportProps> {
 		this.loadedCharacter.Name = '';
 
 		for (const descendant of character.GetDescendants()) {
-			if (!CharacterViewport.CLONEABLE_CLASSES[descendant.ClassName]) continue;
+			if (!CharacterViewport.CLONEABLE_CLASSES.has(descendant.ClassName)) continue;
 
 			const originalArchival = descendant.Archivable;
 
