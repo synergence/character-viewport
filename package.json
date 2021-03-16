@@ -1,0 +1,26 @@
+{
+	"name": "@rbxts/character-viewport",
+	"version": "1.0.0",
+	"description": "Character viewport for roblox-ts",
+	"main": "out/init.lua",
+	"scripts": {
+		"prepublishOnly": "rbxtsc"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "Unlicense",
+	"types": "out/index.d.ts",
+	"files": [
+		"out"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"devDependencies": {
+		"@rbxts/compiler-types": "^1.0.0-types.0",
+		"@rbxts/types": "^1.0.463"
+	},
+	"dependencies": {
+		"@rbxts/roact": "^1.3.0-ts.10"
+	}
+}
